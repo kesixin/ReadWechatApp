@@ -14,6 +14,8 @@
 
 * 只需 要修改小程序appid和在小程序公众号中添加服务器域名（开发工具有添加域名提示），就可以发布小程序了。
 
+* 使用问题咨询QQ：903363777
+
 ### 项目运行截图
 
 ![1550043537(1).jpg](https://upload-images.jianshu.io/upload_images/6673460-8da22a2990ef2c9f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
