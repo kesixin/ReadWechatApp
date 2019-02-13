@@ -26,6 +26,6 @@
 
 ![1550043647(1).jpg](https://upload-images.jianshu.io/upload_images/6673460-3c7982d5cb6720db.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-###小程序二维码
+### 小程序二维码
 
 ![bfb8b581-4ac0-a13d-be73-7687000b0f28.jpg](https://upload-images.jianshu.io/upload_images/6673460-6753369cf46d8f7b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
