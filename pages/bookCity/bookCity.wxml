@@ -1,0 +1,89 @@
+<!--pages/bookCity/bookCity.wxml-->
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <!-- <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">书单</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">分类</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">排行</view> -->
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">分类</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">排行</view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <!-- <swiper-item>
+      敬请期待。。。
+    </swiper-item> -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scroll-h">
+        <view class="Cats">
+          <text class="bookCat">男生</text>
+          <view>
+            <navigator hover-class="none" class="catBlock" wx:for="{{majorList.male}}" wx:key="{{index}}" url="/pages/bookCats/bookCats?gender=male&major={{item.name}}">
+              <text class="catName">{{item.name}}</text>
+              <text class="catCount">{{item.bookCount}}本</text>
+            </navigator>
+          </view>
+        </view>
+        <view class="Cats">
+          <text class="bookCat">女生</text>
+          <view>
+            <navigator hover-class="none" url="/pages/bookCats/bookCats?gender=female&major={{item.name}}" class="catBlock" wx:for="{{majorList.female}}" wx:key="{{index}}">
+              <text class="catName">{{item.name}}</text>
+              <text class="catCount">{{item.bookCount}}本</text>
+            </navigator>
+          </view>
+        </view>
+        <!-- <view class="Cats">
+          <text class="bookCat">漫画</text>
+          <view>
+            <navigator hover-class="none" url="/pages/bookCats/bookCats?gender=picture&major={{item.name}}" class="catBlock" wx:for="{{majorList.picture}}" wx:key="{{index}}">
+              <text class="catName">{{item.name}}</text>
+              <text class="catCount">{{item.bookCount}}本</text>
+            </navigator>
+          </view>
+        </view> -->
+        <view class="Cats">
+          <text class="bookCat">出版</text>
+          <view>
+            <navigator hover-class="none" url="/pages/bookCats/bookCats?gender=press&major={{item.name}}" class="catBlock" wx:for="{{majorList.press}}" wx:key="{{index}}">
+              <text class="catName">{{item.name}}</text>
+              <text class="catCount">{{item.bookCount}}本</text>
+            </navigator>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y='true' class='scroll-h'>
+        <view class='rank_item' style='max-height:{{openMaleOther ? 1480 : 660}}rpx'>
+          <text class='bookRank'>男生</text>
+          <navigator hover-class="none" url='{{item.key ? "" : "/pages/rank/rank?id="+item._id+"|"+item.monthRank+"|"+item.totalRank}}' bindtap='{{item.key ? "toggleList" : ""}}'  data-id='0' class='rank_item_item' wx:for="{{rankCategory.male}}" wx:key="{{index}}">
+            <image class='rank_icon' wx:if='{{!item.collapse}}' data-id='0' src='{{STATIC_HOST}}{{item.cover}}'></image>
+            <image class='rank_icon' wx:if='{{item.key}}' data-id='0' src='{{item.cover}}'></image>
+            <view data-id='0'>{{item.title}}</view>
+            <image wx:if='{{item.key}}' data-id='0' class='pulldown_icon' src='{{openMaleOther ? "../../img/pullDowned.png" : "../../img/pullDown.png"}}'></image>
+          </navigator>
+        </view>
+        <view class='rank_item' style='max-height:{{openFemaleOther ? 1480 : 660}}rpx'>
+          <text class='bookRank'>女生</text>
+          <navigator url='{{item.key ? "" : "/pages/rank/rank?id="+item._id+"|"+item.monthRank+"|"+item.totalRank}}' bindtap='{{item.key ? "toggleList" : ""}}' data-id='1' class='rank_item_item' wx:for="{{rankCategory.female}}" wx:key="{{index}}">
+            <image class='rank_icon' wx:if='{{!item.collapse}}' data-id='1' src='{{STATIC_HOST}}{{item.cover}}'></image>
+            <image class='rank_icon' wx:if='{{item.key}}' data-id='1' src='{{item.cover}}'></image>
+            <view data-id='1'>{{item.title}}</view>
+            <image wx:if='{{item.key}}' data-id='1' class='pulldown_icon' src='{{openFemaleOther ? "../../img/pullDowned.png" : "../../img/pullDown.png"}}'></image>
+          </navigator>
+        </view>
+        <!-- <view class='rank_item'>
+          <text class='bookRank'>出版</text>
+          <view wx:for="{{rankCategory.epub}}" wx:key="{{inde1x}}">
+            {{item.title}}
+          </view>
+        </view>
+        <view class='rank_item'>
+          <text class='bookRank'>漫画</text>
+          <view wx:for="{{rankCategory.picture}}" wx:key="{{index}}">
+            {{item.title}}
+          </view>
+        </view> -->
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

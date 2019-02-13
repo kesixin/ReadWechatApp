@@ -1,0 +1,27 @@
+<!--pages/bookCats/bookCats.wxml-->
+<view class="bookCats">
+  <view class="type_wrap">
+    <view class="type">
+      <view class="type-item {{currentType === item.id ? 'active' : ''}}" wx:for="{{typeList}}" wx:key="{{index}}" data-typeid="{{item.id}}" bindtap='switchType'>
+        {{item.name}}
+      </view>
+    </view>
+    <scroll-view wx:if="{{showMinor}}" scroll-x class="minor">
+      <view class="minor-item {{currentMinor === item ? 'active' : ''}}" wx:for="{{minorList}}" wx:key="{{index}}" data-typeid="{{item}}" bindtap='switchMinor'>
+        {{item}}
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view enable-back-to-top lower-threshold="100" bindscrolltolower="loadMore" class='bookList' scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{winHeight}}rpx;top:{{bookListTop}}rpx">
+    <navigator hover-class="none" url='/pages/details/details?book_id={{book._id}}' class='book_item' wx:for="{{books.books}}" wx:key="{{index}}" wx:for-item="book">
+      <image src='{{STATIC_HOST+book.cover}}' lazy-load='true'></image>
+      <view class='book_info'>
+        <text class='book_title'>{{book.title}}</text>
+        <text class='book_site'>{{book.author}}</text>
+        <view class='book_desc'>{{book.shortIntro}}</view>
+        <view class='book_tag' wx:for="{{[0,1,2]}}" wx:key="index" wx:for-item="tag"><view style="background:{{tagColors[tag]}}" class='book_tag_item' wx:if="{{book.tags[tag]}}">{{book.tags[tag]}}</view></view>
+      </view>
+    </navigator>
+    <view class="loadedAll" wx:if="{{loadedAll}}">已加载全部</view>
+  </scroll-view>
+</view>

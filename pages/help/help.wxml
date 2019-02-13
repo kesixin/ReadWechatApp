@@ -1,0 +1,8 @@
+<!--pages/help/help.wxml-->
+<view class='help'>
+  <view class='help_title'>常见问题与声明</view>
+  <view wx:for='{{helpList}}' wx:key='{{index}}' class='help_item'>
+   <view class='item_title'>{{item.title}}</view>
+   <view class='item_content'>{{item.content}}</view>
+  </view>
+</view>

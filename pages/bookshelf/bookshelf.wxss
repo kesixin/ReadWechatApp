@@ -1,0 +1,161 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0;
+  width: 100%;
+  border-bottom: 20rpx #f7f7f7 solid;
+  position: relative;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userbookinfo {
+  height: 100rpx;
+  position: relative;
+  top: 20rpx;
+}
+
+.userinfo-nickname {
+  color: #222;
+  font-size: 18px;
+  display: block;
+  line-height: 80rpx;
+}
+
+.booksNum {
+  color: #666;
+  font-size: 13px;
+  display: block;
+  line-height: 30rpx;
+}
+
+.booksNum text {
+  color: #cb1c36;
+}
+
+
+
+.bookshelfContainer {
+  padding: 30rpx 0;
+  margin: 0 80rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 92%;
+  margin-top: 20rpx;
+}
+
+.operation {
+  width: 100%;
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit, .refresh1 {
+  width: 50rpx;
+  height: 50rpx;
+}
+.help {
+  line-height: 60rpx;
+  font-size: 15px;
+  color: #666;
+  position: absolute;
+  top: 80rpx;
+  transform: translateY(-50%);
+  right: 120rpx;
+  border: 1px #999 solid;
+  border-radius: 20%;
+  text-align: center;
+  width: 105rpx;
+}
+
+.bookshelf_item {
+  position: relative;
+  width: 30%;
+  margin: 0 30rpx 30rpx 0;
+}
+
+.noMargin {
+  margin-right: 0;
+}
+
+.bookshelf_item image {
+  width: 210rpx;
+  height: 300rpx;
+  margin: 0 auto;
+}
+
+.deletIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+
+.bookshelf_item .name {
+  color: #222;
+  font-size: 15px;
+}
+
+.readNum {
+  color: #999;
+  font-size: 13px;
+}
+
+.hasUpdate {
+  color: #fff;
+  background: #cb1c36;
+  width: 90rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.noBooks {
+  margin-top: 60rpx;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+  width: 100%;
+}
+
+@keyframes delete {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-1deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.deletAnimation {
+  animation:  delete 1s linear infinite;
+}
+

@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='bookshelfContainer'>
+    <view class='operation'>
+      <image class='edit' bindtap='edit' src='{{isEdit ? "../../img/ok.png" : "../../img/edit.png"}}'></image>
+      <navigator url='/pages/help/help' hover-class="none" class='help'>帮助</navigator>
+      <image bindtap='getShelfInfo' class='refresh1' src='../../img/refresh1.png'></image>
+    </view>
+     <view wx:if="{{!bookShelfData.length}}" class='noBooks'>
+      主人还没收藏书籍哦，请去书城收藏吧！
+    </view>
+    <navigator  url='{{isEdit ? "" : "/pages/reader/reader?book_id="+item.bookInfo.id+"&book_title="+item.bookInfo.title}}' hover-class="none" class='bookshelf_item {{(index + 1)%3 === 0 ? "noMargin" : ""}}' wx:for="{{bookShelfData}}" wx:key="{{index}}">
+      <view wx:if='{{hasUpdate[index]}}' class='hasUpdate'>有更新</view>
+      <image class="{{isEdit ? 'deletAnimation' : ''}}" src="{{STATIC_HOST}}{{item.bookInfo.cover}}"></image>
+      <icon wx:if='{{isEdit}}' bindtap='delete' data-id='{{index}}' class='deletIcon' type='clear' color='#999' size='30'></icon>
+      <text class='name'>{{item.bookInfo.title}}</text>
+      <view class='readNum'>读到第{{item.readNum}}章</view>
+    </navigator>
+  </view>
+</view>

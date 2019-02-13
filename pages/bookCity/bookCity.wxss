@@ -1,0 +1,145 @@
+/* pages/bookCity/bookCity.wxss */
+
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f7f7f7;
+  font-size: 16px;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+/* .tab-item {  有书单
+  display: inline-block;
+  width: 33.3%;
+  text-align: center;
+} */
+
+.tab-item {  
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+.tab-item.active {
+  color: #ec304c;
+  position: relative;
+}
+
+/* .tab-item.active:after { 有书单
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 52rpx;
+  background: #ec304c;
+  position: absolute;
+  bottom: 0;
+  left: 98rpx;
+  border-radius: 16rpx;
+} */
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 52rpx;
+  background: #ec304c;
+  position: absolute;
+  bottom: 0;
+  left: 160rpx;
+  border-radius: 16rpx;
+}
+
+.tab-content {
+  margin-top: 80rpx;
+}
+
+.scroll-h {
+  height: 100%;
+}
+
+.Cats, .rank_item {
+  width: 100%;
+}
+
+.bookCat, .bookRank {
+  color: #999;
+  font-size: 15px;
+  line-height: 100rpx;
+  text-align: left;
+  padding-left: 20rpx;
+}
+
+.Cats view {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.rank_item {
+  overflow: hidden;
+  transition: .6s all ease-in-out;
+}
+
+.rank_item .rank_item_item {
+  width: 95%;
+  border-bottom: 1px #eee solid;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+}
+
+.rank_item_item .rank_icon {
+  width: 55rpx;
+  height: 55rpx;
+  position: relative;
+  top: 18rpx;
+}
+
+.rank_item_item view {
+  font-size: 15px;
+  color: #333;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-left: 20rpx;
+}
+
+.rank_item_item .pulldown_icon {
+  width: 35rpx;
+  height: 35rpx;
+  position: relative;
+  top: 32rpx;
+  left: 345rpx;
+}
+
+.catBlock {
+  height: 120rpx;
+  display: flex;
+  width: 33.3%;
+  flex-direction: column;
+  text-align: center;
+  border: 1px #f7f7f7 solid;
+  box-sizing: border-box;
+}
+
+.catName {
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 15rpx;
+}
+
+.catCount {
+  font-size: 12px;
+  margin-top: 10rpx;
+  color: #999;
+}

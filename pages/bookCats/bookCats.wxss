@@ -1,0 +1,121 @@
+/* pages/bookCats/bookCats.wxss */
+.bookCats {
+  background: #f7f7f7;
+  width: 100%;
+}
+
+.type_wrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+}
+
+.type,.minor {
+  padding-left: 20rpx;
+  border-bottom: 1px #eee solid;
+  width: 100%;
+}
+
+.type {
+  display: flex;
+}
+
+.minor {
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.type-item,.minor-item {
+  line-height: 80rpx;
+  font-size: 14px;
+  color: #666;
+  margin-right: 30rpx;
+}
+
+.minor-item {
+  display: inline-block;
+}
+
+.active {
+  color: #cb1c36;
+}
+
+.bookList {
+  background: #fff;
+  position: relative;
+  padding: 0 30rpx;
+  width: 92%;
+}
+
+.book_item {
+  border-bottom: 1px #eee solid;
+  position: relative;
+  height: 335rpx;
+}
+
+.book_item image {
+  width: 190rpx;
+  height: 275rpx;
+  position: absolute;
+  left: 0;
+  top: 30rpx;
+}
+
+.book_info {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  width: 475rpx;
+}
+
+.book_title {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.book_site,.book_desc {
+  color: #999;
+  font-size: 12px;
+  line-height: 40rpx;
+  display: block;
+   margin-bottom: 10rpx;
+}
+
+.book_desc {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.book_tag {
+  display: inline-block;
+}
+
+.book_tag_item {
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 8rpx;
+  line-height: 40rpx; 
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+}
+
+.loadedAll {
+  text-align: center;
+  line-height: 50rpx;
+  color: #666;
+  font-size: 15px;
+}

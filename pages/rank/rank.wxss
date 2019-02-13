@@ -1,0 +1,94 @@
+/* pages/rank/rank.wxss */
+
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f7f7f7;
+  font-size: 16px;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.tab-item {
+  display: inline-block;
+  width: 33.3%;
+  text-align: center;
+}
+
+.tab-item.active {
+  color: #ec304c;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 52rpx;
+  background: #ec304c;
+  position: absolute;
+  bottom: 0;
+  left: 98rpx;
+  border-radius: 16rpx;
+}
+
+.tab-content {
+  margin-top: 80rpx;
+}
+
+.scroll-h {
+  height: 100%;
+  width: 92%;
+  margin: 0 4%;
+}
+
+.book_item {
+  border-bottom: 1px #eee solid;
+  position: relative;
+  height: 335rpx;
+}
+
+.book_item image {
+  width: 190rpx;
+  height: 275rpx;
+  position: absolute;
+  left: 0;
+  top: 30rpx;
+}
+
+.book_info {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  width: 475rpx;
+}
+
+.book_title {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.book_site, .book_desc {
+  color: #999;
+  font-size: 12px;
+  line-height: 40rpx;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.book_desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

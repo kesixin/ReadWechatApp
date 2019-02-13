@@ -1,0 +1,36 @@
+<!--pages/rank/rank.wxml-->
+<view class='rank'>
+  <view wx:if="{{monthRank.length}}">
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">周榜</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">月榜</view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">总榜</view>
+    </scroll-view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+      <swiper-item wx:for="{{[0,1,2]}}" wx:key='{{index}}'>
+        <scroll-view scroll-y="true" class="scroll-h">
+          <navigator hover-class="none" url='/pages/details/details?book_id={{book._id}}' class='book_item' wx:for="{{index === 0 ? weekRank : index === 1 ? monthRank : index === 2 ? totalRank : ''}}" wx:key="{{index}}" wx:for-item="book">
+            <image src='{{STATIC_HOST}}{{book.cover}}' lazy-load='true'></image>
+            <view class='book_info'>
+              <text class='book_title'>{{book.title}}</text>
+              <text class='book_site'>{{book.author}}</text>
+              <view class='book_desc'>{{book.shortIntro}}</view>
+            </view>
+          </navigator>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view wx:else>
+    <scroll-view scroll-y="true" class="scroll-h" style="height:{{winHeight}}rpx">
+      <navigator hover-class="none" url='/pages/details/details?book_id={{book._id}}' class='book_item' wx:for="{{weekRank}}" wx:key="{{index}}" wx:for-item="book">
+        <image src='{{STATIC_HOST}}{{book.cover}}' lazy-load='true'></image>
+        <view class='book_info'>
+          <text class='book_title'>{{book.title}}</text>
+          <text class='book_site'>{{book.author}}</text>
+          <view class='book_desc'>{{book.shortIntro}}</view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>

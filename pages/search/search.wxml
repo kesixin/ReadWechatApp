@@ -1,0 +1,38 @@
+<!--pages/search/search.wxml-->
+<view class='searchContainer'>
+  <icon wx:if="{{!searchValue}}" class='searchIcon' type='search' color='#999' size='14'></icon>
+  <icon bindtap='clearInput' wx:else class='clearIcon' type='clear' color='#999' size='20'></icon>
+  <input type='text' value="{{searchValue}}" confirm-type='search' bindinput='searchInput' placeholder-class='placerStyle' bindconfirm='search' placeholder='输入书名或作者名'></input>
+  <view wx:if="{{!showSearchContent}}">
+    <view class='hotWord'>
+      <view class='hot_topic'>
+        <view class='hot_title'>大家都在搜</view>
+        <view bindtap='randomHotWord' class='hot_refresh'>换一换</view>
+      </view>
+      <view class='hotWordContent'>
+        <view bindtap='hotWordSearch' data-word='{{item}}' class='hotWord_item' style='background-color: {{hotWordBackgoundColor[index]}}' wx:for="{{showHotWords}}" wx:key="{{index}}">{{item}}</view>
+      </view>
+    </view>
+    <view class='historyWord'>
+      <view class='history_topic'>
+        <view class='history_title'>搜索历史</view>
+        <view bindtap='clearHistory' class='history_clear'>清空</view>
+      </view>
+      <view class='historyWordContent'>
+        <view bindtap='hotWordSearch' data-word='{{item}}' class='historyWord_item' wx:for="{{historyWords}}" wx:key="{{index}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view wx:if="{{showSearchContent}}" enable-back-to-top class='bookList' scroll-top="{{scrollTop}}"  scroll-y="true" style="height:{{winHeight}}rpx;">
+    <navigator hover-class="none" url='/pages/details/details?book_id={{book._id}}' class='book_item' wx:for="{{searchRes.books}}" wx:key="{{index}}" wx:for-item="book">
+      <image src='{{STATIC_HOST}}{{book.cover}}' lazy-load='true'></image>
+      <view class='book_info'>
+        <text class='book_title'>{{book.title}}</text>
+        <text class='book_site'>{{book.author}}</text>
+        <view class='book_desc'>{{book.shortIntro}}</view>
+        <text class='book_follower'>最近收藏: {{book.latelyFollower}}</text>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>

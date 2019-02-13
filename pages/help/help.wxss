@@ -1,0 +1,33 @@
+/* pages/help/help.wxss */
+.help_title {
+  font-size: 20px;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 100%;
+  text-indent: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+.help_item {
+  width: 92%;
+}
+
+.help_item .item_title {
+  margin-left: 30rpx;
+  font-size: 16px;
+  width: 100%;
+  color: #333;
+  border-bottom: 1px #f7f7f7 solid;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.help_item .item_content {
+  width: 100%;
+  margin-left: 30rpx;
+  font-size: 14px;
+  line-height: 55rpx;
+  color: #666;
+  text-indent: 57rpx;
+  border-bottom: 1px #f7f7f7 solid;
+}

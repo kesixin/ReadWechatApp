@@ -1,0 +1,31 @@
+<!--pages/reader/reader.wxml-->
+<import src="../wxParse/wxParse.wxml"/>
+
+<view wx:if="{{showPage}}" class='reader' style='background: {{readerCss.backgroundColor}}'>
+  <scroll-view bindtap='openMenu' scroll-with-animation='true' scroll-top='{{scrollTop}}' bindscroll='getScrollTop' enable-back-to-top scroll-y='true' style='height:{{winHeight}}rpx' class='read_container'>
+    <view class='chapter_title' style='font-size: {{readerCss.titleSize}}px;color: {{readerCss.color}}'>
+      {{bookChapters.chapters[indexPage].title}}
+    </view>
+    <view class='chapter_content' style='font-size: {{readerCss.contentSize}}px;color: {{readerCss.color}};line-height:{{readerCss.lineHeight}}rpx'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view> 
+    <view class='chapterLink'>
+      <view bindtap='goPrev' class="prev">上一章</view>
+      <view bindtap='goNext' class="next">下一章</view>
+    </view>
+  </scroll-view>
+  <view wx:if="{{showMenu}}" class='menu'>
+    <view bindtap='showChapter' class="chapterMenu">目录</view>
+    <view bindtap='toggleDark' class="dark">{{isDark ? '正常' : '夜间'}}</view>
+    <view bindtap='decSize' class='sizeDe'>Aa-</view>
+    <view bindtap='incSize' class='sizeInc'>Aa+</view>
+    <view bindtap='toggleHuyan' class="huyan">{{isHuyan ? '正常' : '护眼'}}</view>
+  </view> 
+  <scroll-view wx:if="{{showChapter}}" class='chapterContainer' style='height:{{winHeight}}rpx' scroll-y='true'>
+    <view class='chapter_topic'>
+      <view class='chapter_topic_title'>目录</view>
+      <view bindtap='showChapter' class='chapter_topic_hide'>收起</view>
+    </view>
+     <view bindtap='pickChapter' data-link="{{item.link}}" data-indexpage="{{index}}" class='chapter_item' wx:key="{{index}}" wx:for="{{bookChapters.chapters}}">{{item.title}}</view> 
+  </scroll-view>
+</view>

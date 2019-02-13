@@ -1,0 +1,105 @@
+/* pages/reader/reader.wxss */
+@import "../wxParse/wxParse.wxss";
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.read_container {
+  margin: 0 30rpx;
+  width: 92%;
+}
+
+.chapter_title {
+  font-weight: bold;
+  border-bottom: 1px #eee solid;
+  width: 100%;
+  padding: 20rpx 0;
+}
+
+.chapter_content {
+  margin-top: 20rpx;
+}
+
+.chapterLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 30rpx 0 80rpx 0;
+}
+
+.prev, .next {
+  width: 150rpx;
+  line-height: 60rpx;
+  font-size: 15px;
+  text-align: center;
+  border: 1px #eee solid;
+  background: #ec304c;
+  color: #fff;
+}
+
+.prev {
+  border-radius: 30rpx 0 0 30rpx;
+}
+
+.next {
+  border-radius: 0 30rpx 30rpx 0;
+}
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.9);
+  height: 85rpx;
+  font-size: 15px;
+  color: #fff;
+  line-height: 85rpx;
+  z-index: 10;
+}
+
+.chapterContainer {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: #fff;
+}
+
+.chapter_topic {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  width: 95%;
+  margin: 30rpx 30rpx 0 30rpx;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+}
+
+.chapter_topic_hide {
+  color: #fff;
+  width: 11%;
+  background: #ec304c;
+  border-radius: 30rpx 0 0 30rpx;
+  font-size: 13px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.chapter_item {
+  font-size: 14px;
+  color: #666;
+  width: 95%;
+  margin-left: 30rpx;
+  border-bottom: 1px #eee solid;
+  line-height: 75rpx;
+  height: 75rpx;
+}
